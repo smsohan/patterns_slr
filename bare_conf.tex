@@ -1,0 +1,646 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{A Systematic Literature Review on the Use of Patterns Related to Software Bugs}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{S M Sohan}
+\IEEEauthorblockA{Department of Computer Science\\
+University of Calgary\\
+Calgary, AB T2N 1N4\\
+Email: sohan39@gmail.com}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3},
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+Patterns are used as a shared vocabulary to quickly identify and communicate recurring problems and their solutions in the software engineering discipline. Accordingly, researchers and practitioners have used various patterns related to bugs so that bugs can be easily identified, communicated, fixed and analyzed. Given the variety of these bug patterns and their use cases, the problem is to find an effective and efficient way to use the bug patterns. In this paper, results of a systematic literature review on bug patterns is presented to answer three research questions about how and where to use the bug patterns and their known impact on software projects. The implication of this research is two-fold: it helps practitioners to learn about the different bug patterns and their impacts, and researchers can use this as a groundwork for conducting future research on the use of bug patterns.
+
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+\section{Introduction}
+
+\section{Research Questions}
+
+\begin{itemize}
+  \item \textbf{RQ1 - } Where patterns in software engineering have been used related to bugs?
+  \item \textbf{RQ2 - } How these bug patterns were established?
+  \item \textbf{RQ3 - } What is known about the impact of these bug patterns?
+\end{itemize}
+
+\section{Research Method}
+
+\subsection{Selection Criteria}
+
+\begin{itemize}
+  \item Search term
+  \item Year
+  \item Data Source
+  \item Exclusion Criteria
+  \item Inclusion Criteria
+  \item Keywording
+\end{itemize}
+
+\subsection{Selected Papers}
+
+
+% subsection  (end)
+
+
+\section{Results} % (fold)
+\label{sec:results}
+Bug patterns have been used primarily on three artifacts as follows: source code (e.g. Java Code of Spring), commit logs on version control systems (e.g. SVN) and bug tracking databases (e.g. JIRA). Looking at different combinations of these artifacts, the patterns are used on the following life-cycle stages of bugs: bug detection, reporting, fixing and analysis. The remainder of these section presents the results of our analysis on RQ1-3 based on these life cycle stages and artifacts that are used by the selected papers.
+
+
+\subsection{RQ1: Where patterns in software engineering have been used related to bugs?} % (fold)
+\label{sub:rq1_}
+
+\subsubsection{Bug Detection} Detection of bugs has been the primary topic of interest in (x/y) selected papers. Several papers focused on the detection of bugs based on patterns found on the source code exclusively. Allen listed 13 general purpose bug patterns based on Java code as follows: The Rogue Tile, Null Pointers Everywhere!, The Dangling Composite, The Null Flag, The Double Descent, The Liar View Saboteur Data, The Broken Dispatch, The Impostor Type, The Split Cleaner, The Fictitious Implementation, The Orphaned Thread and The Run-On Initialization\cite{bug_patterns_allen}. Zhang et al. identified 6 bug patterns that are specific to Aspect Oriented Programming based on AspectJ as follows: Infinite loop, Scope of Advice, Multiple Advice Invocation, Unmatched join point, Misuse of getTarget, Introduction interference \cite{on_identifying_zhang}. These patterns are identified based on the authors' experience of using the programming languages.
+
+Several bug detector tools are built to detect potential bugs based on static analysis of the source code or it's compiled binary output. Bug patterns are coded as rules, and the bug detector tools can find fragments of code by matching the manually coded rules against the given source code or its compiled binary output. FindBugs\footnote{http://findbugs.sourceforge.net/} analyzes Java byte-code to detect bugs against 424 known bug patterns at the time of writing this paper. Al-Ameen et al. identified 8 bug patterns that cannot be identified by FindBugs because some information is lost when source code is translated to byte-code \cite{making_al_ameen}. They identified the following bug patterns cannot be detected on the byte-code representation of Java source code: zero or negative length arrays, divide by zero, integer overflow, out of bounds array, probable out of bounds, never executed for loop, unexpected loop behaviour. Primary evaluation from Al-Ameen et al. showed a reduction of false negatives from 50\% to 15\% using their bug detector compared to FindBugs. PMD\footnote{http://pmd.sourceforge.net/} is tool that analyzes source code of multiple languages: PLSQL, Apache Velocity, XML, XSL. Both FindBugs and PMD allow users to configure and add custom bug patterns.
+
+Several papers discussed alternative bug tracking tools that look at artifacts other than source code alone. For example, Yu et al. proposed BugDetector as tool to detect bugs based on static analysis of Java source code and existing bug reports data \cite{ontology_lu}. Yu manually analyzed 200 bug reports and categorized them into 42 categories mapping each category to one or more bug patterns as follows: EqualsMayReturnNullBug, NullPointerBug, OverrideEqualsOrHashcodeBug, EqualsWithObjectBug, MaliciousCodeBug, SwitchClauseWithoutDefaultClauseBug, SwitchSubClauseWithoutBreakClauseBug, NewStringInstanceBug,NewIntegerInstanceBug,SelfAssignmentBug, BlockNotContainAnyClauseInIfElseClauseBug. These patterns are coded in Semantic Web Rule Language (SWRL) to develop an ontology. Then a program detects potential bugs by comparing the abstract syntax tree representation of a Java program against the SWRL coded bug patterns. In a case study, they showed BugDetector was able to detect more bugs compared to FindBugs (443 vs. 341) for 3 out of the 4 projects studied while taking more time (approx. 5x) in the process.
+
+
+\subsubsection{Bug Reporting}
+Pattern matching techniques have been used to classify bug reports. For example, Chaturvedi et al. used a machine learning technique to automatically infer the potential severity of a bug to help the bug triage process based on artifacts of a single kind, the existing bug reports \cite{determining_chaturvedi}. They compute important terms for each bug severity level based on existing bugs which are then matched against a new reported bug to automatically infer it's severity.
+
+Nagwani et al. proposed a technique for automatically assigning expert developers to fix a bug \cite{predicting_nagwani}. Using this technique, each developer is mapped against a set of terms that is automatically extracted from previously assigned bugs. This mapping is used against the terms found on new bug report to rank the developers using similarity metrics.
+
+In this cases, since the solutions are based on project specific historical data about bug reports, the technique is reusable across projects, but the specific pattern used on a project is developed and evolves with the project.
+
+ReLink is a tool developed buy Wu et al. to find the missing links between bug reports and their corresponding code commit \cite{relink_wu}. ReLink finds explicit links where bug numbers are found on commit logs as well as uses similarity metrics to infer the missing links. To compute similarity, it uses both the text and context. The context comprises of people and timing of the bugs and code commits with the heuristic that similarity in these properties provide additional information to the text. Bissyande performed an evaluation of ReLink with 12,000 bugs on 10 programs showed high precision but low recall for commits where explicit bug references are missing \cite{empirical_bissyande}. However, the results were 50\% better compared to when only text match is used to infer the link between commit and bug reports.
+
+
+\subsubsection{Bug Fixing}
+
+TBD
+
+\subsubsection{Bug Analysis}
+Previous bug reports have been analyzed by connecting the different artifacts together so that the relationship among bug reports, code commits and source code can be categorized into bug patterns. Ahsan et al. developed a database comprising of bug reports, commit logs and source code that can be used for analyzing bug and code change patterns \cite{database_ahsan}. They manually analyzed 3716 code commits and classified the commits as follows: bug introducing (18.2\%), fixing (15.8\%), bug fix-introducing (37.8\%) and clean (28.1\%). As seen from their analysis, a total of (18.2+37.8) = 56\%  commits were introducing new bugs. Steff et al. analyzed 1060 historical bug reports and 579 code commits and found that the history of a commit described by its files was correlated to defects \cite{co_evolution_steff}. Steff et al. visualized the commits as a graph, where each node represents a commit and each edge represents a file that is changed by a subsequent commit. The graph showed that subsequent bug fixes on the same file were separated by at most two commits. This implies a bug pattern that defect-prone files are likely to create new defect every two commits.
+
+
+\subsection{RQ2 - How these bug patterns were established?} % (fold)
+\label{sub:item_rq2}
+
+\subsection{RQ3 - What is known about the impact of these bug patterns?} % (fold)
+\label{sub:item_rq3}
+
+\section{Discussion}
+\subsection{Threats to Validity}
+\section{Conclusion}
+
+% subsection rq1_ (end)
+
+
+% section section_name (end)
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+
+\section{Conclusion}
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+\begin{thebibliography}{1}
+  \bibitem{bug_patterns_allen} Allen, Eric, Bug patterns in Java, 2002
+  \bibitem{on_identifying_zhang} Sai Zhang; Jianjun Zhao, On Identifying Bug Patterns in Aspect-Oriented Programs, Computer Software and Applications Conference, 2007. COMPSAC 2007. 31st Annual International , vol.1, no., pp.431,438, 24-27 July 2007
+  \bibitem{making_al_ameen} Al-Ameen, M.N.; Hasan, M.M.; Hamid, A., Making findbugs more powerful, Software Engineering and Service Science (ICSESS), 2011 IEEE 2nd International Conference on , vol., no., pp.705,708, 15-17 July 2011
+  \bibitem{ontology_lu} Lian Yu; Jun Zhou; Yue Yi; Ping Li; Qianxiang Wang, Ontology Model-Based Static Analysis on Java Programs, Computer Software and Applications, 2008. COMPSAC '08. 32nd Annual IEEE International , vol., no., pp.92,99, July 28 2008-Aug. 1 2008
+  \bibitem{determining_chaturvedi} Chaturvedi, K.K.; Singh, V.B., Determining Bug severity using machine learning techniques, Software Engineering (CONSEG), 2012 CSI Sixth International Conference on , vol., no., pp.1,6, 5-7 Sept. 2012
+  \bibitem{predicting_nagwani} Nagwani, N.K.; Verma, S., Predicting expert developers for newly reported bugs using frequent terms similarities of bug attributes, ICT and Knowledge Engineering, 2011 9th International Conference on , vol., no., pp.113,117, 12-13 Jan. 2012
+
+  \bibitem{relink_wu} Wu, Rongxin and Zhang, Hongyu and Kim, Sunghun and Cheung, Shing-Chi, ReLink: Recovering Links Between Bugs and Changes, 2011 19th ACM SIGSOFT Symposium and the 13th European Conference on Foundations of Software Engineering, pp.15,25
+
+  \bibitem{empirical_bissyande}Bissyande, T.F.; Thung, F.; Shaowei Wang; Lo, D.; Lingxiao Jiang; Reveillere, L., Empirical Evaluation of Bug Linking, Software Maintenance and Reengineering (CSMR), 2013 17th European Conference on , vol., no., pp.89,98, 5-8 March 2013
+
+
+  \bibitem{database_ahsan} Ahsan, S.N.; Ferzund, J.; Wotawa, F., A Database for the Analysis of Program Change Patterns, Networked Computing and Advanced Information Management, 2008. NCM '08. Fourth International Conference on , vol.2, no., pp.32,39, 2-4 Sept. 2008
+
+  \bibitem{co_evolution_steff}Steff, M.; Russo, B., Co-evolution of logical couplings and commits for defect estimation, Mining Software Repositories (MSR), 2012 9th IEEE Working Conference on , vol., no., pp.213,216, 2-3 June 2012
+
+
+  \bibitem{software_howden} Howden, W.E., Software test selection patterns and elusive bugs, Computer Software and Applications Conference, 2005. COMPSAC 2005. 29th Annual International , vol.2, no., pp.25,32 Vol. 2, 26-28 July 2005
+
+\end{thebibliography}
+
+
+% that's all folks
+\end{document}
+
+

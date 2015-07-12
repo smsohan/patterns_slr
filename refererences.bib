@@ -1,0 +1,580 @@
+
+
+* 280 for software bug pattern
+
+* Howden, W.E., "Software test selection patterns and elusive bugs," Computer Software and Applications Conference, 2005. COMPSAC 2005. 29th Annual International , vol.2, no., pp.25,32 Vol. 2, 26-28 July 2005
+doi: 10.1109/COMPSAC.2005.122
+
+_Talks about patterns of test cases, instead of patterns of bugs. Not relevant._
+_PASTA Pattern. Where model based testing is defined in terms of patterns._
+
+
+Abstract: Traditional white and black box testing methods are effective in revealing many kinds of defects, but the more elusive bugs slip past them. Model-based testing incorporates additional application concepts in the selection of tests, which may provide more refined bug detection, but does not go far enough. Test selection patterns identify defect-oriented contexts in a program. They also identify suggested tests for risks associated with a specified context. A context and its risks is a kind of conceptual trap designed to corner a bug. The suggested tests will find the bug if it has been caught in the trap.
+
+keywords: {formal specification;object-oriented programming;program debugging;program testing;program verification;black box testing;conceptual trap;model-based testing incorporates;program defect-oriented contexts;software bug detection;software defects;software test selection patterns;white box testing;Binary codes;Computer industry;Hardware;Image analysis;Information analysis;Instruments;Internet;Java;Mobile handsets;Software safety},
+
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1508074&isnumber=32309
+
+* Bissyande, T.F.; Thung, F.; Shaowei Wang; Lo, D.; Lingxiao Jiang; Reveillere, L., "Empirical Evaluation of Bug Linking," Software Maintenance and Reengineering (CSMR), 2013 17th European Conference on , vol., no., pp.89,98, 5-8 March 2013
+doi: 10.1109/CSMR.2013.19
+
+_Linkage between bug tracker and code repository. ReLink evaluation to see if bug and code could be linked on 12000 bugs for 10 programs. Uses similarity metrics 50% better. Provides a dataset of bugs and connected commits. Finds direct links when bug numbers are found on commits. 2nd pass tries to find missing links. Uses time, developer/owner, text similarity (VSM)_
+
+_ReLink -> links when explicit links present, 100%. partial -> bad, more training has little impact, bad cross-project accuracy, better than regular IR without time and people heuristics, false negatives with heuristics, false positives with text similarity._
+
+_Overall high precision (accurate when it finds something) and low recall (doesn't find all)._
+
+
+Abstract: To collect software bugs found by users, development teams often set up bug trackers using systems such as Bugzilla. Developers would then fix some of the bugs and commit corresponding code changes into version control systems such as svn or git. Unfortunately, the links between bug reports and code changes are missing for many software projects as the bug tracking and version control systems are often maintained separately. Yet, linking bug reports to fix commits is important as it could shed light into the nature of bug fixing processes and expose patterns in software management. Bug linking solutions, such as ReLink, have been proposed. The demonstration of their effectiveness however faces a number of issues, including a reliability issue with their ground truth datasets as well as the extent of their measurements. We propose in this study a benchmark for evaluating bug linking solutions. This benchmark includes a dataset of about 12,000 bug links from 10 programs. These true links between bug reports and their fixes have been provided during bug fixing processes. We designed a number of research questions, to assess both quantitatively and qualitatively the effectiveness of a bug linking tool. Finally, we apply this benchmark on ReLink to report the strengths and limitations of this bug linking tool.
+keywords: {program debugging;software engineering;Bugzilla system;ReLink solution;bug linking empirical evaluation;bug linking tool;bug tracking system;code change;ground truth dataset;software bug collection;software management;software project;version control system;Benchmark testing;Computer bugs;Control systems;Information retrieval;Joining processes;Software;Training data;Bug Linking;ReLink;benchmark;empirical evaluation;missing links},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6498458&isnumber=6498434
+
+
+* Chaturvedi, K.K.; Singh, V.B., "Determining Bug severity using machine learning techniques," Software Engineering (CONSEG), 2012 CSI Sixth International Conference on , vol., no., pp.1,6, 5-7 Sept. 2012
+doi: 10.1109/CONSEG.2012.6349519
+
+_Uses various Machine learning techniques to mine bug severity based on text similarity. For each bug report, terms are extracted from bug summary. training data set 80%, test 20% to see if a bug can be classified under a severity. the impact is it can be helpful for bug triage._
+
+Abstract: Software Bug reporting is an integral part of software development process. Once the Bug is reported on Bug Tracking System, their attributes are analyzed and subsequently assigned to various fixers for their resolution. During the last two decades Machine-Learning Techniques (MLT) has been used to create self-improving software. Supervised machine learning technique is widely used for prediction of patterns in various applications but, we have found very few for software repositories. Bug severity, an attribute of a software bug report is the degree of impact that a defect has on the development or operation of a component or system. Bug severity can be classified into different levels based on their impact on the system. In this paper, an attempt has been made to demonstrate the applicability of machine learning algorithms namely Naïve Bayes, k-Nearest Neighbor, Naïve Bayes Multinomial, Support Vector Machine, J48 and RIPPER in determining the class of bug severity of bug report data of NASA from PROMISE repository. The applicability of algorithm in determining the various levels of bug severity for bug repositories has been validated using various performance measures by applying 5-fold cross validation.
+keywords: {Bayes methods;learning (artificial intelligence);pattern classification;program debugging;software engineering;support vector machines;J48;MLT;NASA;PROMISE repository;RIPPER in;bug severity;bug tracking system;k-nearest neighbor;naïve Bayes classifier;naïve Bayes multinomial;self-improving software;software bug reporting;software development process;software repositories;supervised machine learning technique;support vector machine;Accuracy;Classification algorithms;Machine learning;Niobium;Software;Support vector machines;Text mining;Bug Severity;Feature Selection;Machine Learning;Supervised Classification},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6349519&isnumber=6349464
+
+* Al-Ameen, M.N.; Hasan, M.M.; Hamid, A., "Making findbugs more powerful," Software Engineering and Service Science (ICSESS), 2011 IEEE 2nd International Conference on , vol., no., pp.705,708, 15-17 July 2011
+doi: 10.1109/ICSESS.2011.5982427
+
+_FindBugs is static code analyzer to check for patterns of bugs. False warnings 50%. 8 New bug patterns as plug-ins not detected by FindBugs. zero/negative length arrays, div by zero, integer overflow, out of bounds array, probable out of bounds, never executed for loop, unexpected loop behaviour. Found undetectable bugs: leading zeros, missing braces. shows why bytecode analysis may not be enough. performs better than FindBugs and PMD for the given patterns, reduces false warnings from 50% to 15%_
+
+Abstract: To find bugs in software, a number of automated techniques have been developed over years. In recent years the research on finding bugs are being considered with utter importance as the automated detection of bugs plays a momentous role to minimize the cost of testing software. Findbugs is a widely used bug finding tool for java that supports plug-in architecture for adding new bug detectors. We have explored the already detected bug patterns and noticed that there are a number of bug patterns that are yet not detected by findbugs. Thus, our research is a momentous step to make findbugs more reliable and effective. We have written bug detectors to detect 8 different bug patterns. Our analysis and experiments have identified 4 bug patterns that are never detectable by findbugs. We have tested our bug patterns with PMD and have found that PMD cannot detect those bug patterns that our bug detectors can detect. We have run a number of popular applications to test the effectiveness of our bug detectors and our results show that our detectors can successfully detect the bug patterns they aim for and the percentage of false positive, reported by our detector is 15.45% that is much less than the percentage of false positive reported by findbugs.
+keywords: {Java;program debugging;program testing;Java;bug detectors;bug finding tool;findbugs;software bugs;software testing;Arrays;Companies;Computer bugs;Detectors;Indexing;Java;Software;Static Analysis;bug finding tools;findbugs},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5982427&isnumber=5982227
+
+* Nagwani, N.K.; Verma, S., "Predicting expert developers for newly reported bugs using frequent terms similarities of bug attributes," ICT and Knowledge Engineering (ICT & Knowledge Engineering), 2011 9th International Conference on , vol., no., pp.113,117, 12-13 Jan. 2012
+doi: 10.1109/ICTKE.2012.6152388
+
+_Detect developer to fix on a bug. Find both the developers and required skills. Text similarity. Each developer is mapped with a list of frequent terms found from previously reported bugs that were assigned to them. New bugs are tokenized and matched agains the frequent terms_
+
+Abstract: A software bug repository not only contains the data about software bugs, but also contains the information about the contribution of developers, quality engineers (testers), managers and other team members. It contains the information about the efforts of team members involved in resolving the software bugs. This information can be analyzed to identify some useful knowledge patterns. One such pattern is identifying the developers, who can help in resolving the newly reported software bugs. In this paper a new algorithm is proposed to discover experts for resolving the newly assigned software bugs. The purpose of proposed algorithm is two fold. First is to identify the appropriate developers for newly reported bugs. And second is to find the expertise for newly reported bugs that can help other developers to fix these bugs if required. All the important information in software bug reports is of textual data types like bug summary, description etc. The algorithm is designed using the analysis of this textual information. Frequent terms are generated from this textual information and then term similarity is used to identify appropriate experts (developers) for the newly reported software bug.
+keywords: {program debugging;bug attributes;bug summary;expert developers;frequent terms similarities;knowledge patterns;newly reported bugs;quality engineers;software bug repository;term similarity;textual data types;textual information;Computer bugs;Conferences;Data mining;Prediction algorithms;Software;Software algorithms;Vocabulary;Bug Mining;Expert Finding;Faster Bug Fixing;Software Bug Repositories},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6152388&isnumber=6152386
+
+* Jalbert, K.; Bradbury, J.S., "Using clone detection to identify bugs in concurrent software," Software Maintenance (ICSM), 2010 IEEE International Conference on , vol., no., pp.1,5, 12-18 Sept. 2010
+doi: 10.1109/ICSM.2010.5609529
+
+Abstract: In this paper we propose an active testing approach that uses clone detection and rule evaluation as the foundation for detecting bug patterns in concurrent software. If we can identify a bug pattern as being present then we can localize our testing effort to the exploration of interleavings relevant to the potential bug. Furthermore, if the potential bug is indeed a real bug, then targeting specific thread interleavings instead of examining all possible executions can increase the probability of the bug being detected sooner.
+keywords: {concurrency control;program debugging;program testing;active testing approach;bug patterns detection;clone detection;concurrent software;rule evaluation;Cloning;Computer bugs;Concurrent computing;Pattern matching;Software;System recovery;Testing;active testing;bug patterns;clone detection;concurrency;fault localization;static analysis;testing},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5609529&isnumber=5609528
+
+* Liaghat, Z.; Rasekh, A.H.; Tabebordbar, A.R., "Enhance Software Quality Using Data Mining Algorithms," Engineering and Technology (S-CET), 2012 Spring Congress on , vol., no., pp.1,5, 27-30 May 2012
+doi: 10.1109/SCET.2012.6342020
+
+_Machine learning for predicting defects based on source code metrics. Discarding since it didn't look to be related to patterns for finding bugs._
+
+Abstract: In recent decades the production of large software projects are very large and is costly and time consuming during the phases of software development there are some bugs. Some of the errors generated by the software to detect errors in the initial is phases these errors and may not be seen until the final phases. To clear this error may be the next generation of software. Time and expense of producing the software is error. Error in this phase will increase the cost and time. Over time, larger projects And the error in estimating software cost is higher and higher. and these days detecting the possible defect is one of consideration to rely on software quality. So there is a need to create a prediction model and we can use data mining methods to predict defects. This paper examined ways of imposing clustering on various projects and putting them in groups with the similar characteristics. By using this pattern we can choose a defect predication model that is able to predict the defect of whole group.
+keywords: {data mining;software quality;data mining algorithms;error detection;software development;software estimation;software projects;software quality enhancement;Classification algorithms;Clustering algorithms;Data mining;Data models;Predictive models;Software;Software algorithms},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6342020&isnumber=6341887
+
+* Ahsan, S.N.; Ferzund, J.; Wotawa, F., "A Database for the Analysis of Program Change Patterns," Networked Computing and Advanced Information Management, 2008. NCM '08. Fourth International Conference on , vol.2, no., pp.32,39, 2-4 Sept. 2008
+doi: 10.1109/NCM.2008.179
+
+_Built a database of Mozilla source code, commit logs and bugs. Classified the changes into bug introducing (18.2%), fixing (15.8%), bug fix-introducing(37.8%) and clean(28.1%) out of total of 3716 change transactions. Identifies files as potentially risky. Table 3 can be used for further data_
+
+_insights: larger changes are more likely to include bugs. multiple branches changing a single source induce bugs. with time, clean -> bug fix-introducing changes. _
+
+
+Abstract: Software repositories contain an enormous amount of information regarding the evolution of any large software system. In our experiments we choose the dataset of the freely available Mozilla CVS repository. We downloaded 9552 program files (C++), extracted the CVS log data, and extracted the Mozilla bugs information from the Bugzilla database. From these sources we extracted the program file change data and used a database for storing the extracted data. We further used this database for the analysis of program file changes in order to find change patterns. We apply an approach on the database that allows us to identify the different types of change transactions like bug fixing, clean, bug introducing and bug fix-introducing transactions. We further use the database to find the program file change distribution. Furthermore we use the probability of bug introducing and bug fix-introducing changes to identify the source file as being risky or not for further changes. Such information is not only useful for developers but also for software managers in order to assign resources, e.g., for testing.
+keywords: {object-oriented programming;program debugging;program diagnostics;software maintenance;software prototyping;transaction processing;Mozilla bug;change transaction;database system;large software system evolution;probability;program change pattern analysis;program file;software repository;Computer bugs;Computer networks;Data analysis;Data mining;Information management;Pattern analysis;Predictive models;Programming profession;Software debugging;Transaction databases},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4624113&isnumber=4624098
+
+* Pravin, A.; SRINIVASAN, S., "An efficient programming rule extraction and detection of violations in software source code using neural networks," Advanced Computing (ICoAC), 2012 Fourth International Conference on , vol., no., pp.1,4, 13-15 Dec. 2012
+doi: 10.1109/ICoAC.2012.6416837
+
+Abstract: The larger size and complexity of software source code builds many challenges in bug detection. Data mining based bug detection methods eliminate the bugs present in software source code effectively. Rule violation and copy paste related defects are the most concerns for bug detection system. Traditional data mining approaches such as frequent Itemset mining and frequent sequence mining are relatively good but they are lacking in accuracy and pattern recognition. Neural networks have emerged as advanced data mining tools in cases where other techniques may not produce satisfactory predictive models. The neural network is trained for possible set of errors that could be present in software source code. From the training data the neural network learns how to predict the correct output. The processing elements of neural networks are associated with weights which are adjusted during the training period.
+keywords: {data mining;neural nets;program debugging;software engineering;copy paste;data mining approaches;data mining based bug detection methods;frequent Itemset mining;frequent sequence mining;neural networks;programming detection;programming rule extraction;rule violation;software source code;training data;Biological neural networks;Computer bugs;Data mining;Inspection;Programming;Software;Data Mining;Decision Trees;Defect Detection;Neural Networks Association Rules;Programming Rule},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6416837&isnumber=6416769
+
+* Ko-Li Cheng; Ching-Pao Chang; Chih-Ping Chu, "Software fault detection using program patterns," Software Engineering and Service Science (ICSESS), 2011 IEEE 2nd International Conference on , vol., no., pp.278,281, 15-17 July 2011
+doi: 10.1109/ICSESS.2011.5982308
+
+_Finds defect-prone code segment from source codes and displays on a GUI. Does not discuss about patterns of bugs_
+
+Abstract: Effective detection of software faults is an important activity of software development process. The main difficulty of detecting software fault is finding faults in a large and complex software system. In this paper, we propose an approach that applies program patterns to detect and locate software fault so that programmer can fix bug and increase software quality. The advantage of the proposed approach is that the defect-prone code segments can be detected. To facilitate the programmer to detect program bugs, this approach also includes a Graphic User Interface to locate the defect-prone code segments.
+keywords: {program debugging;software fault tolerance;software quality;complex software system;defect-prone code segments;graphic user interface;program bug detection;program patterns;software development process;software fault detection;software quality;Association rules;Computer bugs;Programming;Software engineering;Software quality;Defect Prediction;Program pattern;Program segement},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5982308&isnumber=5982227
+
+* Sai Zhang; Jianjun Zhao, "On Identifying Bug Patterns in Aspect-Oriented Programs," Computer Software and Applications Conference, 2007. COMPSAC 2007. 31st Annual International , vol.1, no., pp.431,438, 24-27 July 2007
+doi: 10.1109/COMPSAC.2007.159
+
+_Identification of AOP specific bug patterns based on AspectJ._
+
+_Why use patterns: 1) devs to prevent, 2) testers to test case, 3) maintainers to know the common patterns._
+
+_6 new patterns: infinite loop, Scope of Advice, Multiple Advice Invocation, Unmatched join point, Misuse of getTarget, Introduction interference_
+
+Abstract: Bug patterns are erroneous code idioms or bad coding practices that have been proved fail time and time again. They mainly arise from the misunderstanding of language features, the use of erroneous design patterns or simple mistakes sharing the common behaviors. Aspect-oriented programming (AOP) is a new technique to separate the cross-cutting concerns for improving modularity in software design and implementation. However, there is no effective debugging technique for aspect-oriented programs until now and none of the prior researches focused on the identification of bug patterns in aspect-oriented programs. In this paper, we present six bug patterns in AspectJprogramming language and show the corresponding example for each bug pattern to help to illustrate the symptoms of these patterns. We take this as the first step to provide an underlying basis on testing and debugging of AspectJ programs.
+keywords: {object-oriented programming;program debugging;aspect-oriented programming;bug pattern identification;cross-cutting concern;erroneous code idioms;software design;Computer bugs;Computer languages;Computer science;Java;Pattern classification;Programming profession;Software debugging;Software maintenance;Software quality;Software testing},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4291035&isnumber=4290963
+
+ * Lian Yu; Jun Zhou; Yue Yi; Ping Li; Qianxiang Wang, "Ontology Model-Based Static Analysis on Java Programs," Computer Software and Applications, 2008. COMPSAC '08. 32nd Annual IEEE International , vol., no., pp.92,99, July 28 2008-Aug. 1 2008
+doi: 10.1109/COMPSAC.2008.73
+
+_bug reports are classified into patterns and matched agains AST representation of a java program. Compares with FindBugs. SWRL Semantic Web Rule language -> Tester can define bug patterns. 200 bugs into 42 categories. Manually model java -> SWRL. Manual categorization, each bug belonging to one or more patterns. EqualsMayReturnNullBug, NullPointerBug, OverrideEqualsOrHashcodeBug, EqualsWithObjectBug, MaliciousCodeBug, SwitchClauseWithoutDefaultClauseBug, SwitchSubClauseWithoutBreakClauseBug, NewStringInstanceBug,NewIntegerInstanceBug,SelfAssignmentBug, BlockNotContainAnyClauseInIfElseClause
+Bug. The BugDetector performed better in terms of finding related bugs for 3/4 projects, but took ~5x time compared to FindBugs. Created as an Eclipse Plugin._
+
+Abstract: Typical enterprise and military software systems consist of millions of lines of code with complicated dependence on diverse library abstractions. Manually debugging these codes imposes developers overwhelming workload and difficulties. To address software quality concerns efficiently, this paper proposes an ontology-based static analysis approach to automatically detect bugs in the source code of Java programs. First, we elaborate bug list collected, classify bugs into different categories, and translate bug patterns into SWRL (semantic Web rule language) rules using an ontology tool, Protege. An ontology model of Java program is created according to Java program specification using Protege as well. Both SWRL rules and the program ontology model are exported in OWL (Web ontology language) format. Second, Java source code under analysis is parsed into the abstract syntax tree (AST), which is automatically mapped to the individuals of the program ontology model. SWRL bridge takes in the exported OWL file (representing the SWRL rules model and program ontology model) and the individuals created for the Java code, conduits to Jess (a rule engine), and obtains inference results indicating any bugs. We perform experiments to compare bug detection capability with well-known FindBugs tool. A prototype of bug detector tool is developed to show the validity of the proposed static analysis approach.
+keywords: {Java;formal specification;knowledge representation languages;ontologies (artificial intelligence);program compilers;program debugging;program diagnostics;software quality;software tools;FindBugs tool;Java program specification;Jess rule engine;Protege ontology tool;SWRL rule;Web ontology language format;abstract syntax tree;automatic code debugging;bug detector tool;ontology model-based static analysis;program parsing;program translation;semantic Web rule language;software quality;Bridges;Computer bugs;Debugging;Java;OWL;Ontologies;Semantic Web;Software libraries;Software quality;Software systems;Program ontology model;abstract syntax tree (AST);bug detector;reasoning;static analysis},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4591539&isnumber=4591503
+
+* Aranda, J.; Venolia, G., "The secret life of bugs: Going past the errors and omissions in software repositories," Software Engineering, 2009. ICSE 2009. IEEE 31st International Conference on , vol., no., pp.298,308, 16-24 May 2009
+doi: 10.1109/ICSE.2009.5070530
+
+_case study showing bugs cannot be extracted only from source code. Levels of data extraction about bugs: automated analysis of bug records, automated analysis of conversations, human sense-making, direct accounts of the history by participants. At each level the information diverges due to bad data, missing data, people. heuristics don't follow about time, frequency of communication. In the survey, the people marked as “owners” of the bug were driving its resolution only in 34% of the time. In 11% they had nothing to do with the bug._
+
+_They identified coordination patterns. Impacts: tools: require an active owner, search for bugs, awareness by social network among people. Researchers: using only automation may be faulty._
+
+Abstract: Every bug has a story behind it. The people that discover and resolve it need to coordinate, to get information from documents, tools, or other people, and to navigate through issues of accountability, ownership, and organizational structure. This paper reports on a field study of coordination activities around bug fixing that used a combination of case study research and a survey of software professionals. Results show that the histories of even simple bugs are strongly dependent on social, organizational, and technical knowledge that cannot be solely extracted through automation of electronic repositories, and that such automation provides incomplete and often erroneous accounts of coordination. The paper uses rich bug histories and survey results to identify common bug fixing coordination patterns and to provide implications for tool designers and researchers of coordination in software development.
+
+keywords: {program debugging;software engineering;bug fixing coordination patterns;bug histories;coordination activities;electronic repositories;software bugs;software development;software repositories;Automation;Computer bugs;Data mining;History;Navigation;Productivity;Programming;Software debugging;Software development management;Spatial databases},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5070530&isnumber=5070493
+
+* Ohira, M.; Hassan, A.E.; Osawa, N.; Matsumoto, K., "The impact of bug management patterns on bug fixing: A case study of Eclipse projects," Software Maintenance (ICSM), 2012 28th IEEE International Conference on , vol., no., pp.264,273, 23-28 Sept. 2012
+doi: 10.1109/ICSM.2012.6405281
+Abstract: An efficient bug management process is critical for the success of software projects. Prior work has focused on improving this process, for example, by automating bug triaging, detecting duplicate bugs, and understanding the rationale for re-opening bugs. This paper continues this line of work by exploring the people who are involved in the bug management process. In particular we develop four patterns that distill the different relations between the people involved in the process: the reporter, triager, and fixer of a bug. Through a case study on the Eclipse Platform and JDT projects, we demonstrate that these patterns have an impact on the efficiency of the bug management process. For example, we find that using our patterns project personnel can improve their efficiency through better communication about bugs before assigning them.
+keywords: {program debugging;Eclipse project;JDT project;bug fixer;bug fixing;bug management pattern;bug management process;bug reopening;bug reporter;bug triager;bug triaging;duplicate bugs detection;software project;Computer bugs;Conferences;Educational institutions;Personnel;Software maintenance;Time measurement},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6405281&isnumber=6404866
+
+* Steff, M.; Russo, B., "Co-evolution of logical couplings and commits for defect estimation," Mining Software Repositories (MSR), 2012 9th IEEE Working Conference on , vol., no., pp.213,216, 2-3 June 2012
+doi: 10.1109/MSR.2012.6224283
+
+_A graph is created with each node representing a commit. Two commits (nodes) are connected with an edge if they change the same file. The edge is labelled with the file name. to test the hypotheses: The history of a commit as conveyed by its files is correlated to defects, and Topological properties of the commit graph are correlated
+to fault-proneness of files._
+
+_1060 defects from Spring project, 432 commits as bug fixing, 147 changes more than one file. the greater the number of changed files, the greater the number of detects in a commit history. roughly half of all non-isolated
+bug-fixing commits occur in proximity of another nonisolated bug-fixing commit, i.e. at most two steps removed in the graph_
+
+Abstract: Logical couplings between files in the commit history of a software repository are instances of files being changed together. The evolution of couplings over commits' history has been used for the localization and prediction of software defects in software reliability. Couplings have been represented in class graphs and change histories on the class-level have been used to identify defective modules. Our new approach inverts this perspective and constructs graphs of ordered commits coupled by common changed classes. These graphs, thus, represent the co-evolution of commits, structured by the change patterns among classes. We believe that co-evolutionary graphs are a promising new instrument for detecting defective software structures. As a first result, we have been able to correlate the history of logical couplings to the history of defects for every commit in the graph and to identify sub-structures of bug-fixing commits over sub-structures of normal commits.
+keywords: {graph theory;program debugging;software reliability;bug-fixing commit substructure identification;co-evolutionary graphs;commit co-evolution;defect estimation;defective module identification;defective software structure detection;logical coupling co-evolution;normal commit substructure;ordered commit graphs;software defect localization;software defect prediction;software reliability;software repository;Correlation;Couplings;Estimation;History;Instruments;Software;Syntactics;change coupling;commit graphs;commit history;defects},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6224283&isnumber=6224266
+
+
+* Feng Zhang; Khomh, F.; Ying Zou; Hassan, A.E., "An Empirical Study of the Effect of File Editing Patterns on Software Quality," Reverse Engineering (WCRE), 2012 19th Working Conference on , vol., no., pp.456,465, 15-18 Oct. 2012
+doi: 10.1109/WCRE.2012.55
+Abstract: While some developers like to work on multiple code change requests, others might prefer to handle one change request at a time. This juggling of change requests and the large number of developers working in parallel often lead to files being edited as part of different change requests by one or several developers. Existing research has warned the community about the potential negative impacts of some file editing patterns on software quality. For example, when several developers concurrently edit a file as part of different change requests, they are likely to introduce bugs due to limited awareness of other changes. However, very few studies have provided quantitative evidence to support these claims. In this paper, we identify four file editing patterns. We perform an empirical study on three open source software systems to investigate the individual and the combined impact of the four patterns on software quality. We find that: (1) files that are edited concurrently by many developers have on average 2.46 times more future bugs than files that are not concurrently edited, (2) files edited in parallel with other files by the same developer have on average 1.67 times more future bugs than files individually edited, (3) files edited over an extended period (i.e., above the third quartile) of time have 2.28 times more future bugs than other files, and (4) files edited with long interruptions (i.e., above the third quartile) have 2.1 times more future bugs than other files. When more than one editing patterns are followed by one or many developers during the editing of a file, we observe that the number of future bugs in the file can be as high as 1.6 times the average number of future bugs in files edited following a single editing pattern. These results can be used by software development teams to warn developers about risky file editing patterns.
+keywords: {file organisation;program debugging;software quality;code change request;file editing pattern;open source software system;single editing pattern;software bug;software development;software quality;Computer bugs;Equations;History;Measurement;Programming;Software quality;bug;change request;empirical software engineering;ile editing pattern;mylyn;software quality},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6385141&isnumber=6385088
+
+
+* Chen Liu; Jinqiu Yang; Lin Tan; Hafiz, M., "R2Fix: Automatically Generating Bug Fixes from Bug Reports," Software Testing, Verification and Validation (ICST), 2013 IEEE Sixth International Conference on , vol., no., pp.282,291, 18-22 March 2013
+doi: 10.1109/ICST.2013.24
+Abstract: Many bugs, even those that are known and documented in bug reports, remain in mature software for a long time due to the lack of the development resources to fix them. We propose a general approach, R2Fix, to automatically generate bug-fixing patches from free-form bug reports. R2Fix combines past fix patterns, machine learning techniques, and semantic patch generation techniques to fix bugs automatically. We evaluate R2Fix on three projects, i.e., the Linux kernel, Mozilla, and Apache, for three important types of bugs: buffer overflows, null pointer bugs, and memory leaks. R2Fix generates 57 patches correctly, 5 of which are new patches for bugs that have not been fixed by developers yet. We reported all 5 new patches to the developers; 4 have already been accepted and committed to the code repositories. The 57 correct patches generated by R2Fix could have shortened and saved up to an average of 63 days of bug diagnosis and patch generation time.
+keywords: {learning (artificial intelligence);program debugging;Apache;Linux kernel;Mozilla;R2Fix;buffer overflows;bug diagnosis;bug fixes;bug-fixing patches;code repository;fix patterns;free-form bug reports;machine learning techniques;mature software;memory leaks;null pointer bugs;patch generation time;semantic patch generation techniques;Accuracy;Computer bugs;Generators;Kernel;Linux;Security;automated bug fixing;automated program repair;bug report classification;fix pattern study},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6569740&isnumber=6569698
+
+* Lucia; Lo, D.; Lingxiao Jiang; Budi, A., "Active refinement of clone anomaly reports," Software Engineering (ICSE), 2012 34th International Conference on , vol., no., pp.397,407, 2-9 June 2012
+doi: 10.1109/ICSE.2012.6227175
+Abstract: Software clones have been widely studied in the recent literature and shown useful for finding bugs because inconsistent changes among clones in a clone group may indicate potential bugs. However, many inconsistent clone groups are not real bugs (true positives). The excessive number of false positives could easily impede broad adoption of clone-based bug detection approaches. In this work, we aim to improve the usability of clone-based bug detection tools by increasing the rate of true positives found when a developer analyzes anomaly reports. Our idea is to control the number of anomaly reports a user can see at a time and actively incorporate incremental user feedback to continually refine the anomaly reports. Our system first presents top few anomaly reports from the list of reports generated by a tool in its default ordering. Users then either accept or reject each of the reports. Based on the feedback, our system automatically and iteratively refines a classification model for anomalies and re-sorts the rest of the reports. Our goal is to present the true positives to the users earlier than the default ordering. The rationale of the idea is based on our observation that false positives among the inconsistent clone groups could share common features (in terms of code structure, programming patterns, etc.), and these features can be learned from the incremental user feedback. We evaluate our refinement process on three sets of clone-based anomaly reports from three large real programs: the Linux Kernel (C), Eclipse, and ArgoUML (Java), extracted by a clone-based anomaly detection tool. The results show that compared to the original ordering of bug reports, we can improve the rate of true positives found (i.e., true positives are found faster) by 11%, 87%, and 86% for Linux kernel, Eclipse, and ArgoUML, respectively.
+keywords: {Linux;operating system kernels;pattern classification;program debugging;ArgoUML;Eclipse;Linux kernel;active refinement;bug finding;classification model;clone anomaly reports;clone-based bug detection approach;clone-based bug detection tool usability;default ordering;false positives;incremental user feedback;software clones;true positives;Cloning;Computer bugs;Engines;Feature extraction;Kernel;Linux;Programming},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6227175&isnumber=6227015
+
+
+* Wagner, S.; Deissenboeck, F.; Aichner, M.; Wimmer, J.; Schwalb, M., "An Evaluation of Two Bug Pattern Tools for Java," Software Testing, Verification, and Validation, 2008 1st International Conference on , vol., no., pp.248,257, 9-11 April 2008
+doi: 10.1109/ICST.2008.63
+
+_Detecting only 3-4 field bugs for cost effective. No field defects have been found that could have been detected by the tools. Third, the identification of fault-prone classes based on the results of such tools is investigated and found to be possible. Domain specific tools are required to find bugs in logic that cannot be found by general purpose tools. But still worth since they can detect some potential field bugs._
+
+_Compared FindBugs and PMD. Ran the tools on two versions, release and internal. To see if the field defects that are fixed in the internal could be detected beforehand on the release version. Also, checks to see a file was changed on internal for multiple bugs that was already warned by the tools on release version._
+
+_the tools only need to detect a single severe defect or 3–15 normal defects in order to be cost-efficient. Interestingly, we could not find a single case where a field defect could be related to a warning generated by one
+of the bug pattern tools. We see the reasons for this in the inherently limited power of the bug patterns used in the tools as they mainly work on a syntactical level. incomplete case differentiations, wrong API method, improperly chosen constants, UI bugs. Our study results suggest that bug pattern tools do generally not fulfil what some of their manufacturers’ website claim._
+
+_recommendations: use early and often, multiple tools, configure each tool differently, IDE integration, product and analyze report_
+
+Abstract: Automated static analysis is a promising technique to detect defects in software. However, although considerable effort has been spent for developing sophisticated detection possibilities, the effectiveness and efficiency has not been treated in equal detail. This paper presents the results of two industrial case studies in which two tools based on bug patterns for Java are applied and evaluated. First, the economic implications of the tools are analysed. It is estimated that only 3-4 potential field defects need to be detected for the tools to be cost-efficient. Second, the capabilities of detecting field defects are investigated. No field defects have been found that could have been detected by the tools. Third, the identification of fault-prone classes based on the results of such tools is investigated and found to be possible. Finally, methodological consequences are derived from the results and experiences in order to improve the use of bug pattern tools in practice.
+keywords: {Java;program debugging;program diagnostics;software tools;Java;automated static analysis;bug pattern tools;defect detection;economic implications;fault-prone classes identification;Automation;Computer languages;Fault detection;Fault diagnosis;HTML;Java;Pattern analysis;Quality assurance;Software quality;Software testing;Static analysis;bug pattern;economics;effectiveness},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4539552&isnumber=4539517
+
+* Chaturvedi, K.K.; Bedi, P.; Misra, S.; Singh, V.B., "An Empirical Validation of the Complexity of Code Changes and Bugs in Predicting the Release Time of Open Source Software," Computational Science and Engineering (CSE), 2013 IEEE 16th International Conference on , vol., no., pp.1201,1206, 3-5 Dec. 2013
+doi: 10.1109/CSE.2013.201
+Abstract: With the increasing popularity of open source software, the changes in source code are inevitable. These changes in code are due to feature enhancement, new feature introduction and bug repair or fixed. It is important to note that these changes can be quantified by using entropy based measures. The pattern of bug fixing scenario with complexity of code change is responsible for the next release as these changes will cover the number of requirements and fixes. In this paper, we are proposing a method to predict the next release problem based on the complexity of code change and bugs fixed. We applied multiple linear regression to predict the time of the next release of the product and measured the performance using different residual statistics, goodness of fit curve and R2. We observed from the results of multiple linear regression that the predicted value of release time is fitting well with the observed value of number of months for the next release.
+keywords: {program debugging;public domain software;regression analysis;bug fixed;bug repair;bugs complexity;code changes complexity;feature enhancement;feature introduction;multiple linear regression;open source software;Complexity theory;Computer bugs;History;Linear regression;Maintenance engineering;Open source software;bug repositories;complexity of code change;next release time;open source software;software configuration management repositories},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6755360&isnumber=6755170
+
+* Osman, H.; Lungu, M.; Nierstrasz, O., "Mining frequent bug-fix code changes," Software Maintenance, Reengineering and Reverse Engineering (CSMR-WCRE), 2014 Software Evolution Week - IEEE Conference on , vol., no., pp.343,347, 3-6 Feb. 2014
+doi: 10.1109/CSMR-WCRE.2014.6747191
+Abstract: Detecting bugs as early as possible plays an important role in ensuring software quality before shipping. We argue that mining previous bug fixes can produce good knowledge about why bugs happen and how they are fixed. In this paper, we mine the change history of 717 open source projects to extract bug-fix patterns. We also manually inspect many of the bugs we found to get insights into the contexts and reasons behind those bugs. For instance, we found out that missing null checks and missing initializations are very recurrent and we believe that they can be automatically detected and fixed.
+keywords: {data mining;program debugging;public domain software;software quality;bug-fix pattern;bugs detection;mining frequent bug-fix code changes;null checks;open source projects;software quality;Cloning;Computer bugs;Data mining;History;Java;Software;Software engineering},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6747191&isnumber=6747152
+
+* Tian Jiang; Lin Tan; Sunghun Kim, "Personalized defect prediction," Automated Software Engineering (ASE), 2013 IEEE/ACM 28th International Conference on , vol., no., pp.279,289, 11-15 Nov. 2013
+doi: 10.1109/ASE.2013.6693087
+
+Abstract: Many defect prediction techniques have been proposed. While they often take the author of the code into consideration, none of these techniques build a separate prediction model for each developer. Different developers have different coding styles, commit frequencies, and experience levels, causing different defect patterns. When the defects of different developers are combined, such differences are obscured, hurting prediction performance. This paper proposes personalized defect prediction-building a separate prediction model for each developer to predict software defects. As a proof of concept, we apply our personalized defect prediction to classify defects at the file change level. We evaluate our personalized change classification technique on six large software projects written in C and Java-the Linux kernel, PostgreSQL, Xorg, Eclipse, Lucene and Jackrabbit. Our personalized approach can discover up to 155 more bugs than the traditional change classification (210 versus 55) if developers inspect the top 20% lines of code that are predicted buggy. In addition, our approach improves the F1-score by 0.01-0.06 compared to the traditional change classification.
+keywords: {Java;Linux;program compilers;C software projects;Eclipse;Jackrabbit;Linux kernel;Lucene;PostgreSQL;Xorg;coding styles;commit frequencies;different defect patterns;experience levels;java software projects;personalized defect prediction;separate prediction model;software defect prediction;Computer bugs;Feature extraction;Mars;Predictive models;Syntactics;Training;Vectors;Change classification;machine learning;personalized defect prediction;software reliability},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6693087&isnumber=6693054
+
+* Kakeshita, T.; Oda, M.; Imamura, Y., "Fall-in C: a software tool for pitfall detection in C programs," Software Engineering Conference, 1994. Proceedings., 1994 First Asia-Pacific , vol., no., pp.256,265, 7-9 Dec 1994
+doi: 10.1109/APSEC.1994.465254
+Abstract: Programming language C has a flexible structure, and its compiler generates compact and efficient object codes. However slight bugs (pitfall) which cannot be detected by the compiler may cause a serious error in C programs. We are developing a software tool Fall-in C to detect such pitfalls. The paper demonstrates the basic features of Fall-in C. In order to enable a programmer to correct the detected pitfalls immediately, Fall-in C is executed within GNU Emacs editor. Pitfalls in C programs are mainly ad hoc. Thus we prepare three pitfall detection methods for the extensibility of Fall-in C: regular expression searching, structural pattern matching and message analysis of external programs. The patterns for the first two methods can be easily added to Fall-in C. Furthermore the message analysis method can be used to integrate several C program checkers such as lint, check and cchk into Fall-in C
+keywords: {C language;program testing;software fault tolerance;software tools;C program checkers;C programs;Fall-in C;GNU Emacs editor;compiler;detection methods;efficient object codes;extensibility;external programs;message analysis;pitfall detection;programming language C;regular expression searching;software tool;structural pattern matching;Computer bugs;Computer languages;Flexible structures;Gas detectors;Information science;Pattern analysis;Pattern matching;Program processors;Programming profession;Software tools},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=465254&isnumber=9760
+
+* Zimmermann, T., "Changes and bugs — Mining and predicting development activities," Software Maintenance, 2009. ICSM 2009. IEEE International Conference on , vol., no., pp.443,446, 20-26 Sept. 2009
+doi: 10.1109/ICSM.2009.5306296
+Abstract: Software development results in a huge amount of data: changes to source code are recorded in version archives, bugs are reported to issue tracking systems, and communications are archived in e-mails and newsgroups. We present techniques for mining version archives and bug databases to understand and support software development. First, we introduce the concept of co-addition of method calls, which we use to identify patterns that describe how methods should be called. We use dynamic analysis to validate these patterns and identify violations. The co-addition of method calls can also detect cross-cutting changes, which are an indicator for concerns that could have been realized as aspects in aspect-oriented programming. Second, we present techniques to build models that can successfully predict the most defect-prone parts of large-scale industrial software, in our experiments Windows Server 2003. This helps managers to allocate resources for quality assurance to those parts of a system that are expected to have most defects. The proposed measures on dependency graphs outperformed traditional complexity metrics. In addition, we found empirical evidence for a domino effect, i.e., depending on defect-prone binaries increases the chances of having defects.
+keywords: {data mining;object-oriented programming;program debugging;software quality;Windows Server 2003;aspect-oriented programming;bug databases;large-scale industrial software;quality assurance;resource allocation;software development;source code;tracking systems;version archives mining;Computer bugs;Computer industry;Databases;Large-scale systems;Pattern analysis;Predictive models;Programming;Quality assurance;Quality management;Resource management},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5306296&isnumber=5306271
+
+* Ocariza, F.; Bajaj, K.; Pattabiraman, K.; Mesbah, A., "An Empirical Study of Client-Side JavaScript Bugs," Empirical Software Engineering and Measurement, 2013 ACM / IEEE International Symposium on , vol., no., pp.55,64, 10-11 Oct. 2013
+doi: 10.1109/ESEM.2013.18
+Abstract: Context: Client-side JavaScript is widely used in web applications to improve user-interactivity and minimize client-server communications. Unfortunately, web applications are prone to JavaScript faults. While prior studies have demonstrated the prevalence of these faults, no attempts have been made to determine their root causes and consequences. Objective: The goal of our study is to understand the root causes and impact of JavaScript faults and how the results can impact JavaScript programmers, testers and tool developers. Method: We perform an empirical study of 317 bug reports from 12 bug repositories. The bug reports are thoroughly examined to classify and extract information about the fault's cause (the error) and consequence (the failure and impact). Result: The majority (65%) of JavaScript faults are DOM-related, meaning they are caused by faulty interactions of the JavaScript code with the Document Object Model (DOM). Further, 80% of the highest impact JavaScript faults are DOM-related. Finally, most JavaScript faults originate from programmer mistakes committed in the JavaScript code itself, as opposed to other web application components such as the server-side or HTML code. Conclusion: Given the prevalence of DOM-related faults, JavaScript programmers need development tools that can help them reason about the DOM. Also, testers should prioritize detection of DOM-related faults as most high impact faults belong to this category. Finally, developers can use the error patterns we found to design more powerful static analysis tools for JavaScript.
+keywords: {Java;Web services;client-server systems;document handling;program debugging;program diagnostics;software tools;DOM;JavaScript code;JavaScript fault;JavaScript programmer;Web application component;client side JavaScript bugs;client-server communication;development tool;document object model;error pattern;static analysis tool;user interactivity;Computer bugs;Data mining;Electronic mail;HTML;Libraries;Servers;XML;Document Object Model (DOM);JavaScript;empirical study},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6681338&isnumber=6681323
+
+* Limsettho, N.; Hata, H.; Monden, A.; Matsumoto, K., "Automatic Unsupervised Bug Report Categorization," Empirical Software Engineering in Practice (IWESEP), 2014 6th International Workshop on , vol., no., pp.7,12, 12-13 Nov. 2014
+doi: 10.1109/IWESEP.2014.8
+Abstract: Background: Information in bug reports is implicit and therefore difficult to comprehend. To extract its meaning, some processes are required. Categorizing bug reports is a technique that can help in this regard. It can be used to help in the bug reports management or to understand the underlying structure of the desired project. However, most researches in this area are focusing on a supervised learning approach that still requires a lot of human afford to prepare a training data. Aims: Our aim is to develop an automated framework than can categorize bug reports, according to their hidden characteristics and structures, without the needed for training data. Method: We solve this problem using clustering, unsupervised learning approach. It can automatically group bug reports together based on their textual similarity. We also propose a novel method to label each group with meaningful and representative names. Results: Experiment results show that our framework can achieve performance comparable to the supervised learning approaches. We also show that our labeling process can label each cluster with representative names according to its characteristic. Conclusion: Our framework could be used as an automated categorization system that can be applied without prior knowledge or as an automated labeling suggestion system.
+keywords: {pattern clustering;program debugging;string matching;text analysis;unsupervised learning;automatic unsupervised bug report categorization;clustering;labeling process;textual similarity;unsupervised learning;Accuracy;Equations;Labeling;Logistics;Mathematical model;Supervised learning;Vectors;automated bug report categorization;cluster labeling;clustering;topic modeling},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6976015&isnumber=6976005
+
+* Rutar, N.; Almazan, C.B.; Foster, J.S., "A comparison of bug finding tools for Java," Software Reliability Engineering, 2004. ISSRE 2004. 15th International Symposium on , vol., no., pp.245,256, 2-5 Nov. 2004
+doi: 10.1109/ISSRE.2004.1
+Abstract: Bugs in software are costly and difficult to find and fix. In recent years, many tools and techniques have been developed for automatically finding bugs by analyzing source code or intermediate code statically (at compile time). Different tools and techniques have different tradeoffs, but the practical impact of these tradeoffs is not well understood. In this paper, we apply five bug finding tools, specifically Bandera, ESC/Java 2, FindBugs, JLint, and PMD, to a variety of Java programs. By using a variety of tools, we are able to cross-check their bug reports and warnings. Our experimental results show that none of the tools strictly subsumes another, and indeed the tools often find nonoverlapping bugs. We discuss the techniques each of the tools is based on, and we suggest how particular techniques affect the output of the tools. Finally, we propose a meta-tool that combines the output of the tools together, looking for particular lines of code, methods, and classes that many tools warn about.
+keywords: {Java;program compilers;program debugging;software tools;Bandera;ESC;FindBug;JLint;Java;PMD;bug finding tool;source code;Computer bugs;Data analysis;Educational institutions;Java;Pattern analysis;Pattern matching;Radio access networks;Reliability engineering;Software debugging;Software reliability},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1383122&isnumber=30138
+
+* Ahsan, S.N.; Ferzund, J.; Wotawa, F., "Are There Language Specific Bug Patterns? Results Obtained from a Case Study Using Mozilla," Software Engineering Advances, 2009. ICSEA '09. Fourth International Conference on , vol., no., pp.210,215, 20-25 Sept. 2009
+doi: 10.1109/ICSEA.2009.41
+Abstract: A lot of information can be obtained from configuration management systems and post-release bug databases like Bugzilla. In this paper we focus on the question whether there are language specific bug patterns in large programs. For this purpose we implemented a system for extracting the necessary information from the Mozilla project files. A comparison of the extracted information with respect to the programming language showed that there are bug patterns specific to programming languages. In particular we found that Java files of the Mozilla project are less error prone than C and C++ files. Moreover, we found out that the bug lifetime when using Java was almost double the lifetime of bugs in C or C++ file.
+keywords: {C++ language;Java;data mining;program debugging;Bugzilla;C files;C++ files;Java files;Mozilla;configuration management systems;information extraction;language specific bug patterns;post-release bug databases;programming language;Computer bugs;Computer errors;Computer languages;Data mining;Databases;Java;Lab-on-a-chip;Open source software;Software engineering;Testing;bugs;error patterns;faults;programming-language},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5298423&isnumber=5298193
+
+* Farchi, E.; Nir, Y.; Ur, S., "Concurrent bug patterns and how to test them," Parallel and Distributed Processing Symposium, 2003. Proceedings. International , vol., no., pp.7 pp.,, 22-26 April 2003
+doi: 10.1109/IPDPS.2003.1213511
+Abstract: We present and categorize a taxonomy of concurrent bug patterns. We then use the taxonomy to create new timing heuristics for ConTest. Initial industrial experience indicates that these heuristics improve the bug finding ability of ConTest. We also show how concurrent bug patterns can be derived from concurrent design patterns. Further research is required to complete the concurrent bug taxonomy and formal experiments are needed to show that heuristics derived from the taxonomy improve the bug finding ability of ConTest.
+keywords: {multi-threading;object-oriented programming;program debugging;program testing;ConTest;bug finding ability;concurrent bug patterns;concurrent bug taxonomy;concurrent design patterns;heuristics;timing heuristics;Computer bugs;Computer languages;Interleaved codes;Java;Libraries;Sequential analysis;Software design;Taxonomy;Testing;Timing},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1213511&isnumber=27277
+
+* Gopalan, R.P.; Krishna, A., "Duplicate Bug Report Detection Using Clustering," Software Engineering Conference (ASWEC), 2014 23rd Australian , vol., no., pp.104,109, 7-10 April 2014
+doi: 10.1109/ASWEC.2014.31
+Abstract: Bug reporting and fixing the reported bugs play a critical part in the development and maintenance of software systems. The software developers and end users can collaborate in this process to improve the reliability of software systems. Various end users report the defects they have found in the software and how these bugs affect them. However, the same defect may be reported independently by several users leading to a significant number of duplicate bug reports. There are a number of existing methods for detecting duplicate bug reports, but the best results so far account for only 24% of actual duplicates. In this paper, we propose a new method based on clustering to identify a larger proportion of duplicate bug reports while keeping the false positives of misidentified non-duplicates low. The proposed approach is experimentally evaluated on a large sample of bug reports from three public domain data sets. The results show that this approach achieves better performance in terms of a harmonic measure that combines true positive and true negative rates when compared to the existing methods.
+keywords: {pattern clustering;program debugging;software maintenance;software reliability;bug fixing;clustering;duplicate bug report detection;end users;harmonic measure;misidentified nonduplicates;public domain data sets;software developers;software maintenance;software reliability;Accuracy;Clustering algorithms;Computer bugs;Harmonic analysis;Maintenance engineering;Software;Support vector machines;Bugzilla;bug report;clustering;duplicate detection},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6824114&isnumber=6824087
+
+* Neelofar; Javed, M.Y.; Mohsin, H., "An Automated Approach for Software Bug Classification," Complex, Intelligent and Software Intensive Systems (CISIS), 2012 Sixth International Conference on , vol., no., pp.414,419, 4-6 July 2012
+doi: 10.1109/CISIS.2012.132
+Abstract: Open source projects for example Eclipse and Fire fox have open source bug repositories. User reports bugs to these repositories. Users of these repositories are usually non-technical and cannot assign correct class to these bugs. Triaging of bugs, to developer, to fix them is a tedious and time consuming task. Developers are usually expert in particular areas. For example, few developers are expert in GUI and others are in java functionality. Assigning a particular bug to relevant developer could save time and would help to maintain the interest level of developers by assigning bugs according to their interest. However, assigning right bug to right developer is quite difficult for triager without knowing the actual class, the bug belongs to. In this research, we have classified the bugs in different labels on the basis of summary of the bug. Multinomial Naïve Bayes text classifier is used for classification purpose. For feature selection, Chi-Square and TFIDF algorithms were used. Using Naïve Bayes and Chi-square, we get average of 83 % accuracy.
+keywords: {data mining;pattern classification;program debugging;public domain software;text analysis;Eclipse;Firefox;TFIDF algorithm;bug triaging;chi-square algorithm;feature selection;multinomial naive Bayes text classifier;open source bug repositories;open source projects;software bug classification;Accuracy;Classification algorithms;Computer bugs;Data mining;Software;Testing;Training;Text mining;classification;feature extraction;open source software projects;software repositories;triaging},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6245635&isnumber=6245569
+
+
+# ACM
+
+http://dl.acm.org.ezproxy.lib.ucalgary.ca/results.cfm?CFID=683661398&CFTOKEN=10128266&adv=1&COLL=DL&DL=ACM&termzone=Abstract&allofem=software+bug+pattern&anyofem=&noneofem=&peoplezone=Name&people=&peoplehow=and&keyword=&keywordhow=AND&affil=&affilhow=AND&pubin=&pubinhow=and&pubby=&pubbyhow=OR&since_year=&before_year=&pubashow=OR&sponsor=&sponsorhow=AND&confdate=&confdatehow=OR&confloc=&conflochow=OR&isbnhow=OR&isbn=&doi=&ccs=&subj=&Go.x=41&Go.y=8
+
+* @inproceedings{Yin:2011:FBB:2025113.2025121,
+ author = {Yin, Zuoning and Yuan, Ding and Zhou, Yuanyuan and Pasupathy, Shankar and Bairavasundaram, Lakshmi},
+ title = {How Do Fixes Become Bugs?},
+ booktitle = {Proceedings of the 19th ACM SIGSOFT Symposium and the 13th European Conference on Foundations of Software Engineering},
+ series = {ESEC/FSE '11},
+ year = {2011},
+ isbn = {978-1-4503-0443-6},
+ location = {Szeged, Hungary},
+ pages = {26--36},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/2025113.2025121},
+ doi = {10.1145/2025113.2025121},
+ acmid = {2025121},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bug fixing, human factor, incorrect fixes, software bugs, testing},
+}
+
+Software bugs affect system reliability. When a bug is exposed in the field, developers need to fix them. Unfortunately, the bug-fixing process can also introduce errors, which leads to buggy patches that further aggravate the damage to end users and erode software vendors' reputation.
+
+This paper presents a comprehensive characteristic study on incorrect bug-fixes from large operating system code bases including Linux, OpenSolaris, FreeBSD and also a mature commercial OS developed and evolved over the last 12 years, investigating not only themistake patterns during bug-fixing but also the possible human reasons in the development process when these incorrect bug-fixes were introduced. Our major findings include: (1) at least 14.8%--24.4% of sampled fixes for post-release bugs in these large OSes are incorrect and have made impacts to end users. (2) Among several common bug types, concurrency bugs are the most difficult to fix correctly: 39% of concurrency bug fixes are incorrect. (3) Developers and reviewers for incorrect fixes usually do not have enough knowledge about the involved code. For example, 27% of the incorrect fixes are made by developers who have never touched the source code files associated with the fix. Our results provide useful guidelines to design new tools and also to improve the development process. Based on our findings, the commercial software vendor whose OS code we evaluated is building a tool to improve the bug fixing and code reviewing process.
+
+* BibTeX | EndNote | ACM Ref
+@inproceedings{Ayewah:2010:GFF:1831708.1831738,
+ author = {Ayewah, Nathaniel and Pugh, William},
+ title = {The Google FindBugs Fixit},
+ booktitle = {Proceedings of the 19th International Symposium on Software Testing and Analysis},
+ series = {ISSTA '10},
+ year = {2010},
+ isbn = {978-1-60558-823-0},
+ location = {Trento, Italy},
+ pages = {241--252},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/1831708.1831738},
+ doi = {10.1145/1831708.1831738},
+ acmid = {1831738},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bug patterns, bugs, false positives, findbugs, java, software defects, software quality, static analysis},
+}
+
+In May 2009, Google conducted a company wide FindBugs "fixit". Hundreds of engineers reviewed thousands of FindBugs warnings, and fixed or filed reports against many of them. In this paper, we discuss the lessons learned from this exercise, and analyze the resulting dataset, which contains data about how warnings in each bug pattern were classified. Significantly, we observed that even though most issues were flagged for fixing, few appeared to be causing any serious problems in production. This suggests that most interesting software quality problems were eventually found and fixed without FindBugs, but FindBugs could have found these problems early, when they are cheap to remediate. We compared this observation to bug trends observed in code snapshots from student projects.
+
+The full dataset from the Google fixit, with confidential details encrypted, will be published along with this paper.
+
+* @inproceedings{Kim:2013:APG:2486788.2486893,
+ author = {Kim, Dongsun and Nam, Jaechang and Song, Jaewoo and Kim, Sunghun},
+ title = {Automatic Patch Generation Learned from Human-written Patches},
+ booktitle = {Proceedings of the 2013 International Conference on Software Engineering},
+ series = {ICSE '13},
+ year = {2013},
+ isbn = {978-1-4673-3076-3},
+ location = {San Francisco, CA, USA},
+ pages = {802--811},
+ numpages = {10},
+ url = {http://dl.acm.org/citation.cfm?id=2486788.2486893},
+ acmid = {2486893},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+}
+
+Patch generation is an essential software maintenance task because most software systems inevitably have bugs that need to be fixed. Unfortunately, human resources are often insufficient to fix all reported and known bugs. To address this issue, several automated patch generation techniques have been proposed. In particular, a genetic-programming-based patch generation technique, GenProg, proposed by Weimer et al., has shown promising results. However, these techniques can generate nonsensical patches due to the randomness of their mutation operations. To address this limitation, we propose a novel patch generation approach, Pattern-based Automatic program Repair (PAR), using fix patterns learned from existing human-written patches. We manually inspected more than 60,000 human-written patches and found there are several common fix patterns. Our approach leverages these fix patterns to generate program patches automatically. We experimentally evaluated PAR on 119 real bugs. In addition, a user study involving 89 students and 164 developers confirmed that patches generated by our approach are more acceptable than those generated by GenProg. PAR successfully generated patches for 27 out of 119 bugs, while GenProg was successful for only 16 bugs.
+
+* @inproceedings{Liang:2013:IPB:2491411.2491422,
+ author = {Liang, Guangtai and Wang, Qianxiang and Xie, Tao and Mei, Hong},
+ title = {Inferring Project-specific Bug Patterns for Detecting Sibling Bugs},
+ booktitle = {Proceedings of the 2013 9th Joint Meeting on Foundations of Software Engineering},
+ series = {ESEC/FSE 2013},
+ year = {2013},
+ isbn = {978-1-4503-2237-9},
+ location = {Saint Petersburg, Russia},
+ pages = {565--575},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/2491411.2491422},
+ doi = {10.1145/2491411.2491422},
+ acmid = {2491422},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Project-specific bug patterns, incomplete fixes, sibling-bug detection},
+}
+
+Lightweight static bug-detection tools such as FindBugs, PMD, Jlint, and Lint4j detect bugs with the knowledge of generic bug patterns (e.g., objects of java.io.InputStream are not closed in time after used). Besides generic bug patterns, different projects under analysis may have some project-specific bug patterns. For example, in a revision of the Xerces project, the class field "fDTDHandler" is dereferenced without proper null-checks, while it could actually be null at runtime. We name such bug patterns directly related to objects instantiated in specific projects as Project-Specific Bug Patterns (PSBPs). Due to lack of such PSBP knowledge, existing tools usually fail in effectively detecting most of this kind of bugs. We name bugs belonging to the same project and sharing the same PSBP as sibling bugs. If some sibling bugs are fixed in a fix revision but some others remain, we treat such fix as an incomplete fix. To address such incomplete fixes, we propose a PSBP-based approach for detecting sibling bugs and implement a tool called Sibling-Bug Detector (SBD). Given a fix revision, SBD first infers the PSBPs implied by the fix revision. Then, based on the inferred PSBPs, SBD detects their related sibling bugs in the same project. To evaluate SBD, we apply it to seven popular open-source projects. Among the 108 warnings reported by SBD, 63 of them have been confirmed as real bugs by the project developers, while two existing popular static detectors (FindBugs and PMD) cannot report most of them.
+
+* @inproceedings{Guo:2011:MBO:1958824.1958887,
+ author = {Guo, Philip J. and Zimmermann, Thomas and Nagappan, Nachiappan and Murphy, Brendan},
+ title = {"Not My Bug!" and Other Reasons for Software Bug Report Reassignments},
+ booktitle = {Proceedings of the ACM 2011 Conference on Computer Supported Cooperative Work},
+ series = {CSCW '11},
+ year = {2011},
+ isbn = {978-1-4503-0556-3},
+ location = {Hangzhou, China},
+ pages = {395--404},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/1958824.1958887},
+ doi = {10.1145/1958824.1958887},
+ acmid = {1958887},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bug reassignment, bug tracking, bug triaging},
+}
+
+Bug reporting/fixing is an important social part of the soft-ware development process. The bug-fixing process inher-ently has strong inter-personal dynamics at play, especially in how to find the optimal person to handle a bug report. Bug report reassignments, which are a common part of the bug-fixing process, have rarely been studied.
+
+In this paper, we present a large-scale quantitative and qualitative analysis of the bug reassignment process in the Microsoft Windows Vista operating system project. We quantify social interactions in terms of both useful and harmful reassignments. For instance, we found that reassignments are useful to determine the best person to fix a bug, contrary to the popular opinion that reassignments are always harmful. We categorized five primary reasons for reassignments: finding the root cause, determining ownership, poor bug report quality, hard to determine proper fix, and workload balancing. We then use these findings to make recommendations for the design of more socially-aware bug tracking systems that can overcome some of the inefficiencies we observed in our study.
+
+* @inproceedings{Naguib:2013:BRA:2487085.2487091,
+ author = {Naguib, Hoda and Narayan, Nitesh and Br\"{u}gge, Bernd and Helal, Dina},
+ title = {Bug Report Assignee Recommendation Using Activity Profiles},
+ booktitle = {Proceedings of the 10th Working Conference on Mining Software Repositories},
+ series = {MSR '13},
+ year = {2013},
+ isbn = {978-1-4673-2936-1},
+ location = {San Francisco, CA, USA},
+ pages = {22--30},
+ numpages = {9},
+ url = {http://dl.acm.org/citation.cfm?id=2487085.2487091},
+ acmid = {2487091},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+}
+
+One question which frequently arises within the context of artifacts stored in a bug tracking repository is: who should work on this bug report? A number of approaches exist to semi-automatically identify and recommend developers, e.g. using machine learning techniques and social networking analysis. In this work, we propose a new approach for assignee recommendation leveraging user activities in a bug tracking repository. Within the bug tracking repository, an activity profile is created for each user from the history of all his activities (i.e. review, assign, and resolve). This profile, to some extent, indicates the users role, expertise, and involvement in this project. These activities influence and contribute to the identification and ranking of suitable assignees. In order to evaluate our work, we apply it to bug reports of three different projects. Our results indicate that the proposed approach is able to achieve an average hit ratio of 88%. Comparing this result to the LDA-SVMbased assignee recommendation technique, it was found that the proposed approach performs better.
+
+* @inproceedings{Jin:2012:ACF:2387880.2387902,
+ author = {Jin, Guoliang and Zhang, Wei and Deng, Dongdong and Liblit, Ben and Lu, Shan},
+ title = {Automated Concurrency-bug Fixing},
+ booktitle = {Proceedings of the 10th USENIX Conference on Operating Systems Design and Implementation},
+ series = {OSDI'12},
+ year = {2012},
+ isbn = {978-1-931971-96-6},
+ location = {Hollywood, CA, USA},
+ pages = {221--236},
+ numpages = {16},
+ url = {http://dl.acm.org/citation.cfm?id=2387880.2387902},
+ acmid = {2387902},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+}
+
+Concurrency bugs are widespread in multithreaded programs. Fixing them is time-consuming and error-prone. We present CFix, a system that automates the repair of concurrency bugs. CFix works with a wide variety of concurrency-bug detectors. For each failure-inducing interleaving reported by a bug detector, CFix first determines a combination of mutual-exclusion and order relationships that, once enforced, can prevent the buggy interleaving. CFix then uses static analysis and testing to determine where to insert what synchronization operations to force the desired mutual-exclusion and order relationships, with a best effort to avoid deadlocks and excessive performance losses. CFix also simplifies its own patches by merging fixes for related bugs.
+
+Evaluation using four different types of bug detectors and thirteen real-world concurrency-bug cases shows that CFix can successfully patch these cases without causing deadlocks or excessive performance degradation. Patches automatically generated by CFix are of similar quality to those manually written by developers.
+
+* @inproceedings{Sahoo:2010:ESR:1806799.1806870,
+ author = {Sahoo, Swarup Kumar and Criswell, John and Adve, Vikram},
+ title = {An Empirical Study of Reported Bugs in Server Software with Implications for Automated Bug Diagnosis},
+ booktitle = {Proceedings of the 32Nd ACM/IEEE International Conference on Software Engineering - Volume 1},
+ series = {ICSE '10},
+ year = {2010},
+ isbn = {978-1-60558-719-6},
+ location = {Cape Town, South Africa},
+ pages = {485--494},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/1806799.1806870},
+ doi = {10.1145/1806799.1806870},
+ acmid = {1806870},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bug characteristics, bug reports, network servers, testing},
+}
+
+Reproducing bug symptoms is a prerequisite for performing automatic bug diagnosis. Do bugs have characteristics that ease or hinder automatic bug diagnosis? In this paper, we conduct a thorough empirical study of several key characteristics of bugs that affect reproducibility at the production site. We examine randomly selected bug reports of six server applications and consider their implications on automatic bug diagnosis tools. Our results are promising. From the study, we find that nearly 82% of bug symptoms can be reproduced deterministically by re-running with the same set of inputs at the production site. We further find that very few input requests are needed to reproduce most failures; in fact, just one input request after session establishment suffices to reproduce the failure in nearly 77% of the cases. We describe the implications of the results on reproducing software failures and designing automated diagnosis tools for production runs.
+
+* @inproceedings{Vakilian:2011:KTD:2048147.2048167,
+ author = {Vakilian, Mohsen and Negara, Stas and Tasharofi, Samira and Johnson, Ralph E.},
+ title = {Keshmesh: A Tool for Detecting and Fixing Java Concurrency Bug Patterns},
+ booktitle = {Proceedings of the ACM International Conference Companion on Object Oriented Programming Systems Languages and Applications Companion},
+ series = {OOPSLA '11},
+ year = {2011},
+ isbn = {978-1-4503-0942-4},
+ location = {Portland, Oregon, USA},
+ pages = {39--40},
+ numpages = {2},
+ url = {http://doi.acm.org/10.1145/2048147.2048167},
+ doi = {10.1145/2048147.2048167},
+ acmid = {2048167},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bug, concurrency, detector, fixer, parallelism, pattern, program analysis, static analysis},
+}
+
+Developing concurrent software is error prone. Others have cataloged common bug patterns in concurrent Java programs. But, there are no tools for detecting complex concurrency bug patterns accurately, and concurrent programs are full of similar bugs. We have been developing a tool called Keshmesh for detecting complex concurrency bug patterns in Java programs statically. Keshmesh is the first tool that accurately detects a few of the top concurrency bug patterns of the SEI CERT catalog [3] and suggests automated fixers for some of them. Keshmesh is fast enough to be used interactively, produces few false alarms and helps Java programmers to quickly find and fix common concurrency bug patterns in their programs.
+
+* @inproceedings{Hovemeyer:2004:FBE:1028664.1028717,
+ author = {Hovemeyer, David and Pugh, William},
+ title = {Finding Bugs is Easy},
+ booktitle = {Companion to the 19th Annual ACM SIGPLAN Conference on Object-oriented Programming Systems, Languages, and Applications},
+ series = {OOPSLA '04},
+ year = {2004},
+ isbn = {1-58113-833-4},
+ location = {Vancouver, BC, CANADA},
+ pages = {132--136},
+ numpages = {5},
+ url = {http://doi.acm.org/10.1145/1028664.1028717},
+ doi = {10.1145/1028664.1028717},
+ acmid = {1028717},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bug checkers, bug patterns, bugs, static analysis},
+}
+Many techniques have been developed over the years to automatically find bugs in software. Often, these techniques rely on formal methods and sophisticated program analysis. While these techniques are valuable, they can be difficult to apply, and they aren't always effective in finding real bugs.
+
+<i>Bug patterns</i> are code idioms that are often errors. We have implemented automatic detectors for a variety of bug patterns found in Java programs. In this extended abstract<sup>1</sup>, we describe how we have used bug pattern detectors to find serious bugs in several widely used Java applications and libraries. We have found that the effort required to implement a bug pattern detector tends to be low, and that even extremely simple detectors find bugs in real applications.
+
+From our experience applying bug pattern detectors to real programs, we have drawn several interesting conclusions. First, we have found that even well tested code written by experts contains a surprising number of obvious bugs. Second, Java (and similar languages) have many language features and APIs which are prone to misuse. Finally, that simple automatic techniques can be effective at countering the impact of both ordinary mistakes and misunderstood language features.
+
+* @phdthesis{Kim:2006:ABP:1237392,
+ author = {Kim, Sunghun},
+ advisor = {Whitehead,Jr., E. James},
+ title = {Adaptive Bug Prediction by Analyzing Project History},
+ year = {2006},
+ isbn = {978-0-542-83718-0},
+ note = {AAI3229992},
+ publisher = {University of California at Santa Cruz},
+ address = {Santa Cruz, CA, USA},
+}
+
+Finding and fixing software bugs is difficult, and many developers put significant effort into finding and fixing them. A project's software change history records the change that introduces a bug and the change that subsequently fixes it. This bug-introducing and bug-fix experience can be used to predict future bugs. This dissertation presents two bug prediction algorithms that adaptively analyze a project's change history: bug cache and change classification.
+The basic assumption of the bug cache approach is that the bugs do not occur in isolation, but rather in a burst of several related bugs. The bug cache exploits this locality by caching locations that are likely to have bugs. By consulting the bug cache, a developer can detect locations likely to be fault prone. This is useful for prioritizing verification and validation resources on the most bug prone files, functions, or methods. An evaluation of seven open source projects with more than 200,000 revisions shows that the bug cache selects 10% of the source code files; these files account for 73%--95% of future bugs.
+
+The change classification approach learns from previous buggy change patterns using two machine learning algorithms, Naïve Bayes and Support Vector Machine. After training on buggy change patterns, it predicts new unknown changes as either buggy or clean. As soon as changes are made, developers can use the predicted information to inspect the new changes, which are an average of 20 lines of code. After training on 12 open source projects, the change classification approach can, on average, classify buggy changes with 78% accuracy and 65% buggy change recall.
+
+By leveraging project history and learning the unique bug patterns of each project, both approaches can be used to find locations of bugs. This information can be used to increase software quality and reduce software development cost.
+
+* @inproceedings{Kim:2006:MBF:1181775.1181781,
+ author = {Kim, Sunghun and Pan, Kai and Whitehead,Jr., E. E. James},
+ title = {Memories of Bug Fixes},
+ booktitle = {Proceedings of the 14th ACM SIGSOFT International Symposium on Foundations of Software Engineering},
+ series = {SIGSOFT '06/FSE-14},
+ year = {2006},
+ isbn = {1-59593-468-5},
+ location = {Portland, Oregon, USA},
+ pages = {35--45},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/1181775.1181781},
+ doi = {10.1145/1181775.1181781},
+ acmid = {1181781},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bug, bug finding tool, fault, fix, patterns, prediction},
+}
+
+The change history of a software project contains a rich collection of code changes that record previous development experience. Changes that fix bugs are especially interesting, since they record both the old buggy code and the new fixed code. This paper presents a bug finding algorithm using bug fix memories: a project-specific bug and fix knowledge base developed by analyzing the history of bug fixes. A bug finding tool, BugMem, implements the algorithm. The approach is different from bug finding tools based on theorem proving or static model checking such as Bandera, ESC/Java, FindBugs, JLint, and PMD. Since these tools use pre-defined common bug patterns to find bugs, they do not aim to identify project-specific bugs. Bug fix memories use a learning process, so the bug patterns are project-specific, and project-specific bugs can be detected. The algorithm and tool are assessed by evaluating if real bugs and fixes in project histories can be found in the bug fix memories. Analysis of five open source projects shows that, for these projects, 19.3%-40.3% of bugs appear repeatedly in the memories, and 7.9%-15.5% of bug and fix pairs are found in memories. The results demonstrate that project-specific bug fix patterns occur frequently enough to be useful as a bug detection technique. Furthermore, for the bug and fix pairs, it is possible to both detect the bug and provide a strong suggestion for the fix. However, there is also a high false positive rate, with 20.8%-32.5% of non-bug containing changes also having patterns found in the memories. A comparison of BugMem with a bug finding tool, PMD, shows that the bug sets identified by both tools are mostly exclusive, indicating that BugMem complements other bug finding tools.
+
+* @inproceedings{Shen:2008:XEF:1512475.1512490,
+ author = {Shen, Haihao and Zhang, Sai and Zhao, Jianjun and Fang, Jianhong and Yao, Shiyuan},
+ title = {XFindBugs: EXtended FindBugs for AspectJ},
+ booktitle = {Proceedings of the 8th ACM SIGPLAN-SIGSOFT Workshop on Program Analysis for Software Tools and Engineering},
+ series = {PASTE '08},
+ year = {2008},
+ isbn = {978-1-60558-382-2},
+ location = {Atlanta, Georgia},
+ pages = {70--76},
+ numpages = {7},
+ url = {http://doi.acm.org/10.1145/1512475.1512490},
+ doi = {10.1145/1512475.1512490},
+ acmid = {1512490},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+Aspect-oriented software development (AOSD) is gaining popularity with the wider adoption of languages such as AspectJ. However, though the state-of-the-art aspect-oriented programming environment (such as AJDT in the Eclipse IDE) provides powerful capabilities to check the syntactic or grammar errors in AspectJ programs, it fails to detect potential semantic defects in aspect-oriented software systems. In this paper, we present XFindBugs, an eXtended FindBugs for AspectJ, to help programmers find potential bugs in AspectJ applications through static analysis. XFindBugs supports 17 bug patterns to cover common error-prone features in an aspect-oriented system, and integrates the corresponding bug detectors into the FindBugs framework. We evaluate XFindBugs on a number of large-scale open source AspectJ projects (306,800 LOC in total). In our evaluation, XFindBugs confirms 7 reported bugs and finds 257 previously unknown defects. Our experiment also indicates that the bug patterns supported in XFindBugs exist in real-world software systems, even for mature applications by experienced programmers.
+
+
+* @inproceedings{Wu:2011:RRL:2025113.2025120,
+ author = {Wu, Rongxin and Zhang, Hongyu and Kim, Sunghun and Cheung, Shing-Chi},
+ title = {ReLink: Recovering Links Between Bugs and Changes},
+ booktitle = {Proceedings of the 19th ACM SIGSOFT Symposium and the 13th European Conference on Foundations of Software Engineering},
+ series = {ESEC/FSE '11},
+ year = {2011},
+ isbn = {978-1-4503-0443-6},
+ location = {Szeged, Hungary},
+ pages = {15--25},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/2025113.2025120},
+ doi = {10.1145/2025113.2025120},
+ acmid = {2025120},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bugs, changes, data quality, mining software repository, missing links},
+}
+
+__Followed based on other paper__
+
+Software defect information, including links between bugs and committed changes, plays an important role in software maintenance such as measuring quality and predicting defects. Usually, the links are automatically mined from change logs and bug reports using heuristics such as searching for specific keywords and bug IDs in change logs. However, the accuracy of these heuristics depends on the quality of change logs. Bird et al. found that there are many missing links due to the absence of bug references in change logs. They also found that the missing links lead to biased defect information, and it affects defect prediction performance. We manually inspected the explicit links, which have explicit bug IDs in change logs and observed that the links exhibit certain features. Based on our observation, we developed an automatic link recovery algorithm, ReLink, which automatically learns criteria of features from explicit links to recover missing links. We applied ReLink to three open source projects. ReLink reliably identified links with 89% precision and 78% recall on average, while the traditional heuristics alone achieve 91% precision and 64% recall. We also evaluated the impact of recovered links on software maintainability measurement and defect prediction, and found the results of ReLink yields significantly better accuracy than those of traditional heuristics.
+
+_3 projects, 89% precision, 78% recall. impacts: % of bug fixing changes, % of buggy files and bug prediction, Mean time to fix._
+
+* Bug Patterns in Java (Book)
+
+The Rogue Tile
+Null Pointers Everywhere!
+The Dangling Composite
+The Null Flag
+The Double Descent
+The Liar View
+Saboteur Data
+The Broken Dispatch
+The Impostor Type
+The Split Cleaner
+The Fictitious Implementation
+The Orphaned Thread
+The Run-On Initialization
+
+Bug
+An aspect of program behavior that does not match the specification.
+Bug pattern
+A recurring relationship between signaled errors and underlying bugs in a program. Experts apply these patterns to new situations and reason about them more effectively. In particular, they can disregard irrelevant details more quickly and focus on what's important.

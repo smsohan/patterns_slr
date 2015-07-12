@@ -1,0 +1,10 @@
+# Fdb version 3
+["pdflatex"] 1436741816 "bare_conf.tex" "bare_conf.pdf" "bare_conf" 1436741817
+  "/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ptm.fd" 1137110629 961 15056f4a61917ceed3a44e4ac11fcc52 ""
+  "IEEEtran.cls" 1436729288 207390 d653df0f34cc52792528fb4a3b56093b ""
+  "bare_conf.aux" 1436741817 2642 e023a64ba37e07daddb244439b930b97 ""
+  "bare_conf.tex" 1436741816 33478 95dccbfe0a7dc73890609f1253e8f8ef ""
+  (generated)
+  "bare_conf.aux"
+  "bare_conf.log"
+  "bare_conf.pdf"
